@@ -1,0 +1,15 @@
+services:
+  snipe-lookup:
+    build: .
+    container_name: snipe-lookup
+
+    environment:
+      SNIPEIT_API_URL: "${SNIPEIT_API_URL}"
+      SNIPEIT_PUBLIC_URL: "${SNIPEIT_URL}"
+      SNIPEIT_TOKEN: "${SNIPEIT_TOKEN}"
+      VERIFY_TLS: "true"
+
+    ports:
+      - "9342:8080"
+
+    restart: unless-stopped
